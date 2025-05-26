@@ -1,0 +1,10 @@
+name: ${PROJECT}
+services:
+  mongo01:
+    image: mongo
+    environment:
+      # 初回起動時にセットしてあれば、自動でユーザを作成(初回起動以降はユーザ作成は行わない)
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: ThePassword01!?
+    # ユーザ環境変数がついている場合は、自動で--authが付与されるが、基本指定しておいたほうが良さそう
+    command: ["mongod", "--auth"]

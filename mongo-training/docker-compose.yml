@@ -1,0 +1,4 @@
+name: ${PROJECT}
+services:
+  mongo01:
+    image: mongo
